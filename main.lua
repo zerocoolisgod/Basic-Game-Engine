@@ -56,8 +56,8 @@ end
 
 
 function love.keypressed(key, isrepeat)
-  if key == 'escape' or key == 'q' then love.event.quit() end
-  if key == "f" then _CAMERA:toggleFullscreen() end
+  if key == 'escape' then love.event.quit() end
+  if key == "f11" then BGE.camera:toggleFullscreen() end
 end
 
 
@@ -74,7 +74,7 @@ end
 -- Entites
 -------------------------------------------------------------------------------
 function newPlayer(x,y)
-  local p = BGE.entity:new(x,y,16,16)
+  local p = BGE.objects.entity:new(x,y,16,16)
   p:addRectangle({0.2, 0.2, 1, 1})
   p:addCollision(true)
   p:addMovement()
@@ -99,7 +99,7 @@ end
 
 
 function newWall(x,y)
-  local e = BGE.entity:new(x,y,16,16)
+  local e = BGE.objects.entity:new(x,y,16,16)
   e:addRectangle({0.2, 1, 0.2, 1})
   e:addCollision(true)
   return e
