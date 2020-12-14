@@ -62,8 +62,7 @@ end
 
 
 function colSys:getEntityAtPoint(caller, x, y, entTable)
-	local et = entTable or BGE.entitySystem:getEnts()
-	return self:getEntityInRect(caller, x, y, 1, 1, et)
+	self:getEntityInRect(x,y,0,0, entTable)
 end
 
 return colSys

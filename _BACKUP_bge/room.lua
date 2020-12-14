@@ -15,8 +15,11 @@ local resourceManager   = BGE.resourceManager
 local gameData          = BGE.gameData
 local overWorld         = BGE.overWorld
 local inputs						= BGE.inputManager
-local lgDraw            = love.graphics.draw
 
+--local logicComponents = require("bge.logicComponents")
+--local renderComponents = require("bge.renderComponents")
+
+local lgDraw = love.graphics.draw
 
 local Room = {}
 
@@ -34,7 +37,7 @@ function Room:new(id)
   e.ents = {}  
 
 
-  function e:initiate()
+  function e:activateRoom()
     local limitX = self.mapSize.w * self.tileSize.w
     local limitY = self.mapSize.h * self.tileSize.h
 
@@ -44,7 +47,7 @@ function Room:new(id)
     BGE.entitySystem:clearEnts()
     BGE.entitySystem:registerEntityTable(self:getRoomEntities())
   end
-
+  
 
   function e:loadMapFromFile(path)
     local mapFile = require(path)

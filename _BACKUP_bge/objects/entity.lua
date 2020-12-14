@@ -9,7 +9,6 @@ entity = {}
 function entity:new(x,y,w,h)
 	local e = {}
 	e.id = "new ent"
-	e.group = ""
 	
 	e.pos = {
 		x = x or 0,

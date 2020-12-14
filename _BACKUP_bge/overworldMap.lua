@@ -1,9 +1,8 @@
 -------------------------------------------------------------------------------
 -- Overworld map. 
--- Holds rooms in a three dimensional array
+-- Holds single screen rooms in a three dimensional array
 -- If Tiled tmx maps have "x,y,z" properties, an entire
 -- directory can be loadded with loadMaps()
-
 
 local Room = require("bge.room")
 
@@ -11,17 +10,6 @@ local Room = require("bge.room")
 local e = { }
 
 e.map = {}
-e.worldPos = {
-  x = 1,
-  y = 1,
-  z = 1
-}
-
-e.nextWorldPos = {
-  x = 1, 
-  y = 1, 
-  z = 1
-}
 
 for x = 1, 50 do
   e.map[x] = {}
@@ -91,30 +79,6 @@ end
 
 function e:getRoom (x,y,z)
   return self.map[x][y][z]
-end
-
-
-function e:setWorldPosition(x,y,z)
-  self.worldPos.x = x
-  self.worldPos.y = y
-  self.worldPos.z = z
-end
-
-
-function e:setNextWorldPosition(x,y,z)
-  self.nextWorldPos.x = x
-  self.nextWorldPos.y = y
-  self.nextWorldPos.z = z
-end
-
-
-function e:getWorldPosition( )
-  return self.worldPos.x, self.worldPos.y, self.worldPos.z
-end
-
-
-function e:getNextWorldPosition( )
-  return self.nextWorldPos.x, self.nextWorldPos.y, self.nextWorldPos.z
 end
 
 return e

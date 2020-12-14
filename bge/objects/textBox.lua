@@ -17,7 +17,7 @@ function obj:new(x, y, w, h, t)
 
   tb.fgColor = {1, 1, 1, 1}
   tb.bgColor = {1, 0, 0, 1}
-  tb.borderColor = {0, 0, 0, 0}
+  tb.borderColor = {0, 0, 0, 1}
   tb.borderSize = 8
   tb.frameX = x -1
   tb.frameY = y -1 
@@ -36,8 +36,8 @@ function obj:new(x, y, w, h, t)
   tb.r = 0                -- default (0),  Orientation (radians).
   tb.sx = 1               -- default (1)  Scale factor (x-axis).
   tb.sy = 1               -- default (sx)  -- Scale factor (y-axis).
-  tb.ox = 0               -- default (0)  -- Origin offset (x-axis).
-  tb.oy = 0               -- default (0)  -- Origin offset (y-axis).
+  tb.ox = -8               -- default (0)  -- Origin offset (x-axis).
+  tb.oy = -8               -- default (0)  -- Origin offset (y-axis).
   tb.kx = 0               -- default (0)  -- Shearing factor (x-axis).
   tb.ky = 0               -- default (0)  -- Shearing factor (y-axis).
 
@@ -147,11 +147,11 @@ function obj:new(x, y, w, h, t)
   end
   
   function tb:setBackgroundColor(c)
-    self.bgColor = c or {0, 0, 0, 0}
+    self.bgColor = c or {0, 0, 0, 1}
   end
   
   function tb:setBorderColor(c)
-    self.borderColor = c or {0, 0, 0, 0}
+    self.borderColor = c or {0, 0, 0, 1}
   end
   
   function tb:setBorderSize(s)
