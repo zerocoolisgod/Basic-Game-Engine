@@ -5,7 +5,7 @@ function entity:new(x,y)
   p.id = "player"
   p:addCollision(true)
   p:addMovement()
-
+  
   local sprSheet = BGE.resourceManager:getImage("playerSheet")
   p:addSprite(sprSheet, 16, 16, 1, 1, 2)
   local dly = 0.8
@@ -15,7 +15,6 @@ function entity:new(x,y)
   p:addAnimation("left",  {7, 8}, dly)
   p:setAnimation("down")
   
-
 
   p:addOnUpdate(
     function(self, dt)
@@ -49,11 +48,35 @@ function entity:new(x,y)
 
       if cAnm ~= nAnm then self:setAnimation(nAnm) end
       self:move(moveSpeedX, moveSpeedY, AccelerationX, AccelerationY, dt)
+      if BGE.inputManager:isPressed("btnA") then self:action() end
     end
   )
   
+
   function p:setDirection(d)
     self:setAnimation(d)
+  end
+
+  
+  function p:getDirection()
+    return self:getAnimation()
+  end
+
+
+  function p:action()
+    local rx = self.pos.x + (self.size.w / 2)
+    local ry = self.pos.y + (self.size.h / 2)
+
+    local dir = self:getDirection()
+    if dir == "up" then ry = self.pos.y - 4 end
+    if dir == "down" then ry = (self.pos.y + self.size.h) + 4 end
+    if dir == "left" then rx = self.pos.x - 4 end
+    if dir == "right" then rx = (self.pos.x + self.size.w) + 4 end
+    -- self.dbox = {x=rx,y=ry,w=1,h=1}
+    local o = BGE.collisionSystem:getEntityAtPoint(self,rx,ry)
+    if o and o.group == "npc" then
+      o:onAction()
+    end
   end
 
   return p

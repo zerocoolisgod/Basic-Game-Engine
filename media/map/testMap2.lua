@@ -8,8 +8,8 @@ return {
   height = 11,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 3,
-  nextobjectid = 14,
+  nextlayerid = 4,
+  nextobjectid = 15,
   properties = {
     ["x"] = 2,
     ["y"] = 1,
@@ -27,7 +27,7 @@ return {
       columns = 3,
       image = "../image/test_Tiles.png",
       imagewidth = 54,
-      imageheight = 36,
+      imageheight = 54,
       objectalignment = "unspecified",
       tileoffset = {
         x = 0,
@@ -40,7 +40,7 @@ return {
       },
       properties = {},
       terrains = {},
-      tilecount = 6,
+      tilecount = 9,
       tiles = {}
     }
   },
@@ -51,8 +51,36 @@ return {
       y = 0,
       width = 20,
       height = 11,
+      id = 3,
+      name = "background",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      encoding = "lua",
+      data = {
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+      }
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 20,
+      height = 11,
       id = 1,
-      name = "Tile Layer 1",
+      name = "forground",
       visible = true,
       opacity = 1,
       offsetx = 0,
@@ -220,6 +248,19 @@ return {
             ["playerDestY"] = 55,
             ["playerFace"] = "down"
           }
+        },
+        {
+          id = 14,
+          name = "",
+          type = "npc",
+          shape = "rectangle",
+          x = 144,
+          y = 64,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     }

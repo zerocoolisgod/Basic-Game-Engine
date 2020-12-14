@@ -9,15 +9,18 @@ function state:init()
   BGE.resourceManager:loadSounds("media/sound/")
   BGE.resourceManager:loadEntities("objects/")
   
-  -- Load maps into overWorld container
-  -- alternatly you can creat rooms directly
-  -- in the play state
-  BGE.overWorld:setMapSize(8,8,3)
-  BGE.overWorld:loadMaps("media/map/")
+  -- Load maps into the mapTable
+  --BGE.mapTable:setMapSize(8,8,3)
+  BGE.mapTable:loadMaps("media/map/")
   
-  BGE.gameData:setWorldPosition(1,1,1)
-  BGE.gameData:setData("playerSpawn", {x = 160, y = 96})
+  BGE.gameData:setData("nextMap", "testMap")
+  BGE.gameData:setData("playerSpawn", {x = 144, y = 80})
   BGE.gameData:setData("playerFace", "down")
+
+  BGE.gameData:setData("hasBow", false)
+  BGE.gameData:setData("hasWings", false)
+  BGE.gameData:setData("hasBrokenBoat", false)
+  BGE.gameData:setData("hasFixedBoat", false)
   
   BGE.gameStateSystem:setState("playGame")
 end
