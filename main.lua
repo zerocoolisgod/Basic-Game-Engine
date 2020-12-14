@@ -14,7 +14,7 @@ local lgScale = love.graphics.scale
 
 
 -- Localized Vars
-local why = "wtf"
+local why = "wtf2"
 
 
 
