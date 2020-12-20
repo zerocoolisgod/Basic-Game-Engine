@@ -54,6 +54,7 @@
     <property name="mapDestX" type="int" value="1"/>
     <property name="mapDestY" type="int" value="1"/>
     <property name="mapDestZ" type="int" value="1"/>
+    <property name="mapDestination" value="testMap"/>
     <property name="playerDestX" type="int" value="276"/>
     <property name="playerDestY" type="int" value="55"/>
     <property name="playerFace" value="down"/>

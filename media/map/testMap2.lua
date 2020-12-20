@@ -244,6 +244,7 @@ return {
             ["mapDestX"] = 1,
             ["mapDestY"] = 1,
             ["mapDestZ"] = 1,
+            ["mapDestination"] = "testMap",
             ["playerDestX"] = 276,
             ["playerDestY"] = 55,
             ["playerFace"] = "down"
